@@ -14,13 +14,13 @@ namespace SigmaTask11.gift_st.Nicholas_day
     {
         private static StNicholas instance;
 
-        List<Child> childs;
+        List<Child> currentChilds;
 
         Present present;
 
         private StNicholas()
         {
-            childs = new List<Child>();
+            currentChilds = new List<Child>();
             present = new Present();
         }
 
@@ -39,7 +39,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
         {
             string res = "";
 
-            foreach(Child kid in childs)
+            foreach(Child kid in currentChilds)
             {
                 //чи враховувати хороші вчинки=================================
                 if(onlyGood == true)
@@ -54,7 +54,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
 
                             present.MakePresent();
 
-                            res += StringWithKid(kid);
+                            res += MakeStringWithKid(kid);
 
                         }
                         //дівчина
@@ -63,7 +63,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
                             present.Factory = new GirlPresentsFactory();
                             present.MakePresent();
 
-                            res += StringWithKid(kid);
+                            res += MakeStringWithKid(kid);
 
                         }
                     }
@@ -71,7 +71,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
                     else
                     {
                         present.MakeBadPresent();
-                        res += StringWithKid(kid);
+                        res += MakeStringWithKid(kid);
                     }
                 }
                 //не враховувати хороші вчинки=============================
@@ -84,7 +84,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
 
                         present.MakePresent();
 
-                        res += StringWithKid(kid);
+                        res += MakeStringWithKid(kid);
 
                     }
                     //дівчина
@@ -93,7 +93,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
                         present.Factory = new GirlPresentsFactory();
                         present.MakePresent();
 
-                        res += StringWithKid(kid);
+                        res += MakeStringWithKid(kid);
 
                     }
                 }
@@ -102,7 +102,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
             return res;
         }
 
-        public string StringWithKid(Child child)
+        public string MakeStringWithKid(Child child)
         {
             string res = "";
             string gender = "girl";
@@ -116,15 +116,15 @@ namespace SigmaTask11.gift_st.Nicholas_day
 
         public bool AddKid(Child chl)
         {
-            int count = childs.Count;
-            childs.Add(chl);
-            return count > childs.Count;
+            int count = currentChilds.Count;
+            currentChilds.Add(chl);
+            return count > currentChilds.Count;
         }
         public bool RemoveKid(Child chl)
         {
-            int count = childs.Count;
-            childs.Add(chl);
-            return count < childs.Count;
+            int count = currentChilds.Count;
+            currentChilds.Add(chl);
+            return count < currentChilds.Count;
         }
     }
 }

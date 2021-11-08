@@ -21,24 +21,22 @@ namespace SigmaTask11.gift_st.Nicholas_day
             Name = "doesn`t have";
             Gender = true;
 
-            GoodActions = GetNumOfAction();
-            BadActions = GetNumOfAction();
+            GoodActions = GetRandomNumOfAction();
+            BadActions = GetRandomNumOfAction();
         }
-        
-        public int GetNumOfAction()
+        public void SendRequest()
         {
-            Random r = new Random();
-            return r.Next(0,10);
+            StNicholas.Instance().AddKid(this);
         }
-
         public bool IsGood()
         {
             return GoodActions - BadActions >= 0 ? true : false;
         }
 
-        public void SendRequest()
+        public int GetRandomNumOfAction()
         {
-            StNicholas.Instance().AddKid(this);
+            Random r = new Random();
+            return r.Next(0,10);
         }
     }
 }
