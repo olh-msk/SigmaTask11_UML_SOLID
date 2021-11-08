@@ -5,14 +5,14 @@ using System.Text;
 
 namespace SigmaTask11.gift_st.Nicholas_day
 {
-    interface PresentsFactory
+    interface AbstractPresentsFactory
     {
         public Toy CreateToy();
         public Wish CreateWish();
         public EatenGift CreateEatenFift();
     }
 
-    class BoyPresentsFactory : PresentsFactory
+    class BoyPresentsFactory : AbstractPresentsFactory
     {
         public EatenGift CreateEatenFift()
         {
@@ -30,7 +30,7 @@ namespace SigmaTask11.gift_st.Nicholas_day
         }
     }
 
-    class GirlPresentsFactory : PresentsFactory
+    class GirlPresentsFactory : AbstractPresentsFactory
     {
         public EatenGift CreateEatenFift()
         {

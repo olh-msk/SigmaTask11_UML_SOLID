@@ -10,7 +10,7 @@ namespace SigmaTask11.gift_st.Nicholas_day.ForPresent
         public Toy Toy {get;set;}
         public Wish Wish { get; set; }
         public EatenGift EatenGift { get; set; }
-        public PresentsFactory Factory { get; set; }
+        public AbstractPresentsFactory Factory { get; set; }
 
 
         public void MakePresent()
