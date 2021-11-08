@@ -5,7 +5,11 @@ using System.Text;
 
 namespace SigmaTask11.gift_st.Nicholas_day
 {
-    class Child
+    interface IOperationSendRequest
+    {
+        public void SendRequest();
+    }
+    class Child:IOperationSendRequest
     {
         public string Name { get; set; }
         //true - хлопець

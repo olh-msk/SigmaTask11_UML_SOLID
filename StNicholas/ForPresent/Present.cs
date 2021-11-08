@@ -4,8 +4,13 @@ using System.Text;
 
 namespace SigmaTask11.gift_st.Nicholas_day.ForPresent
 {
-    enum WishForBoe {Be, Strong, BePolite, }
-    class Present
+    interface IOperationMakePresent
+    {
+        public void MakePresent();
+        public void MakeBadPresent();
+
+    }
+    class Present : IOperationMakePresent
     {
         public Toy Toy {get;set;}
         public Wish Wish { get; set; }
